@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create React app</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- NEVER EVER USE this in production!!! -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React
+
+      function App() {
+        const [price, setPrice] = useState(0)
+
+        function handleIncrementClick(value) {
+          setPrice((prevPrice) => prevPrice + value)
+        }
+
+        function handleDecrementClick(value) {
+          setPrice((prevPrice) => prevPrice - value)
+        }
+
+        const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)
+
+        return (
+          <div>
+            <h1>Shopping Cart</h1>
+            <button onClick={() => handleDecrementClick(10)}>-</button>
+            <span>{formattedPrice}</span>
+            <button onClick={() => handleIncrementClick(10)}>+</button>
+          </div>
+        )
+      }
+
+      // const root = ReactDOM.createRoot(document.querySelector('#root'))
+      const container = document.querySelector('#root')
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />)
+    </script>
+  </body>
+</html>
