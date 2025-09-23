@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create React app</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- NEVER EVER USE this in production!!! -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const logo = {
+          src: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+          alt: 'React logo',
+          width: 100,
+        }
+
+        // return <img src={logo.src} alt={logo.alt} width={logo.width} />
+        // Works only if the HTML attribute names same as object prop names!
+        return <img {...logo} />
+      }
+
+      // const root = ReactDOM.createRoot(document.querySelector('#root'))
+      const container = document.querySelector('#root')
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />)
+    </script>
+  </body>
+</html>

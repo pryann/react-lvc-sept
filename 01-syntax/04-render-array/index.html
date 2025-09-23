@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create React app</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- NEVER EVER USE this in production!!! -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const frameworks = [
+          { id: 1, name: 'React' },
+          { id: 2, name: 'Angular' },
+          { id: 3, name: 'Vue' },
+        ]
+
+        // OTHER SOLUTIONS
+        // {
+        //   frameworks.map((framework) => <li key={framework.id}>{framework.name}</li>)
+        // }
+        // {
+        //   frameworks.map((framework, index) => <li key={index}>{framework.name}</li>)
+        // }
+
+        return (
+          <ul>
+            {frameworks.map(({ id, name }) => (
+              <li key={id}>{name}</li>
+            ))}
+          </ul>
+        )
+      }
+
+      // const root = ReactDOM.createRoot(document.querySelector('#root'))
+      const container = document.querySelector('#root')
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />)
+    </script>
+  </body>
+</html>
