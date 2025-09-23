@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create React app</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- NEVER EVER USE this in production!!! -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React
+
+      function App() {
+        const initialState = {
+          firstName: '',
+          lastName: '',
+          email: '',
+        }
+
+        const [formData, setFormData] = useState(initialState)
+
+        function handleChange(event) {
+          const { name, value } = event.target
+          setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+          }))
+        }
+
+        function handleSubmit(event) {
+          event.preventDefault()
+          console.log(JSON.stringify(formData))
+          setFormData(initialState)
+        }
+
+        // prettier-ignore
+        return (
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="firstName">First Name</label>
+              <input 
+                type="text" 
+                name="firstName" 
+                id="firstName" 
+                value={formData.firstName} 
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input 
+                type="text" 
+                name="lastName" 
+                id="lastName" 
+                value={formData.lastName}
+                onChange={handleChange}
+            />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                value={formData.email} 
+                onChange={handleChange}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        )
+      }
+
+      // const root = ReactDOM.createRoot(document.querySelector('#root'))
+      const container = document.querySelector('#root')
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />)
+    </script>
+  </body>
+</html>
