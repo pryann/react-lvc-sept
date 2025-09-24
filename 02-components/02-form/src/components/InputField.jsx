@@ -1,8 +1,8 @@
-function InputField({ label, type, id, name, value, handleChange }) {
+function InputField({ label, ...inputAttr }) {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
-      <input type={type} name={name} id={id} value={value} onChange={handleChange} />
+      <label htmlFor={inputAttr.id}>{label}</label>
+      <input {...inputAttr} />
     </div>
   )
 }
