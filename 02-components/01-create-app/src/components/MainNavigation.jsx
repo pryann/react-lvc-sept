@@ -1,9 +1,4 @@
 import '../assets/css/MainNavigation.css'
-import PropTypes from 'prop-types'
-
-MainNavigation.propTypes = {
-  title: PropTypes.string.isRequired,
-}
 
 function MainNavigation(props) {
   const { title } = props

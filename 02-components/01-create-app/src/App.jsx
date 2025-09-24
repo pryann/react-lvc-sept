@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react'
 import MainNavigation from './components/MainNavigation'
 import SiteFooter from './components/SiteFooter'
 import SiteHeader from './components/SiteHeader'
+import InputField from './components/InputField'
 
 function App() {
   // const title = 'Main Navigation'
   const [title, setTitle] = useState('Main Navigation')
+
+  function handleInput(value) {
+    console.log('Input changed to:', value)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +23,10 @@ function App() {
   return (
     <>
       <SiteHeader />
-      <MainNavigation />
+      <MainNavigation title={title} />
+      <main>
+        <InputField handleInput={handleInput} />
+      </main>
       <SiteFooter />
     </>
   )
