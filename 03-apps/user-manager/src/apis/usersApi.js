@@ -11,3 +11,9 @@ export async function getUsers() {
 export async function removeUser(userId) {
   await apiClient.delete(`${urlFragment}/${userId}`)
 }
+
+export async function createUser(user) {
+  console.log('user to create:', user)
+  const response = await apiClient.post(urlFragment, user)
+  return response.data
+}

@@ -1,1 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+label {
+  display: block;
+  font-weight: 600;
+}

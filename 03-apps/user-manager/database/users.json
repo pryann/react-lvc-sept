@@ -581,6 +581,12 @@
       "firstName": "Gaspard",
       "lastName": "Baston",
       "emailAddress": "gbaston2r@t-online.de"
+    },
+    {
+      "id": "101",
+      "firstName": "Gáll",
+      "lastName": "Gergely",
+      "emailAddress": "gergely.gall@training360.com"
     }
   ]
 }
