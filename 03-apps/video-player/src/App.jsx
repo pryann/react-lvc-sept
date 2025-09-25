@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { defaultParams, youtubeApi } from './apis/youtubeApi'
 import Searchbar from './components/SearchBar'
+import VideoList from './components/VideoList'
 
 function App() {
-  const [videos, setVideos] = useState([])
+  const [videos, setVideos] = useState(null)
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -43,12 +44,16 @@ function App() {
         </div>
       </header>
       <main>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">Video placeholder</div>
-            <div className="col-lg-4">Video list placeholder</div>
+        {videos && (
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8">Video placeholder</div>
+              <div className="col-lg-4">
+                <VideoList videos={videos} onSelectVideo={setSelectedVideo} />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </main>
     </>
   )
