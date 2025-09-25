@@ -16,6 +16,7 @@ export default function CreateUserForm({ users, setUsers }) {
     setNewUser((prev) => ({ ...prev, [name]: value }))
   }
 
+  // BACKEND SHOULD GENERATE IDS
   function generateUserId() {
     const userIds = users.map((user) => parseInt(user.id))
     const maxId = Math.max(...userIds)
@@ -28,7 +29,7 @@ export default function CreateUserForm({ users, setUsers }) {
     try {
       const userToCreate = { ...newUser, id: generateUserId() }
       const response = await createUser(userToCreate)
-      setUsers((prev) => [...prev, response])
+      setUsers((prev) => [response, ...prev])
       setNewUser(initialState)
     } catch (error) {
       // DO NOT DO THIS IN REAL APPS
