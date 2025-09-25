@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { defaultParams, youtubeApi } from './apis/youtubeApi'
 import Searchbar from './components/SearchBar'
 import VideoList from './components/VideoList'
+import VideoDetails from './components/VideoDetails'
 
 function App() {
   const [videos, setVideos] = useState(null)
@@ -32,9 +33,9 @@ function App() {
     }
   }
 
-  // useEffect(() => {
-  //   searchVideos()
-  // }, [])
+  useEffect(() => {
+    searchVideos()
+  }, [])
 
   return (
     <>
@@ -47,7 +48,9 @@ function App() {
         {videos && (
           <div className="container">
             <div className="row">
-              <div className="col-lg-8">Video placeholder</div>
+              <div className="col-lg-8">
+                <VideoDetails video={selectedVideo} />
+              </div>
               <div className="col-lg-4">
                 <VideoList videos={videos} onSelectVideo={setSelectedVideo} />
               </div>
