@@ -1,25 +1,46 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { defaultParams, youtubeApi } from './apis/youtubeApi'
+import Searchbar from './components/SearchBar'
 
 function App() {
-  async function serachVideos(query = 'Reactjs') {
-    const response = await youtubeApi.get('/search', {
-      params: {
-        ...defaultParams,
-        q: query,
-      },
-    })
-    console.log(response.data.items)
+  const [videos, setVideos] = useState([])
+  const [selectedVideo, setSelectedVideo] = useState(null)
+  const [errorMessage, setErrorMessage] = useState('')
+
+  async function searchVideos(query = 'Reactjs') {
+    try {
+      const response = await youtubeApi.get('/search', {
+        params: {
+          ...defaultParams,
+          q: query,
+        },
+      })
+
+      if (response.status !== 200) {
+        throw new Error('Network error!')
+      }
+
+      const { items } = response.data
+
+      if (items?.length !== 0) {
+        setVideos(items)
+        setSelectedVideo(items[0])
+      }
+    } catch (error) {
+      setErrorMessage(error.message)
+    }
   }
 
-  useEffect(() => {
-    serachVideos()
-  }, [])
+  // useEffect(() => {
+  //   searchVideos()
+  // }, [])
 
   return (
     <>
       <header>
-        <div className="container">Searchbar placeholder</div>
+        <div className="container">
+          <Searchbar onSearch={searchVideos} />
+        </div>
       </header>
       <main>
         <div className="container">
