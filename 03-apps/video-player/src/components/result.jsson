@@ -1,0 +1,89 @@
+[
+  {
+    "name": "State",
+    "value": [
+      {
+        "kind": "youtube#searchResult",
+        "etag": "QQihNIU8ZmcbKaOW_DSJ2Gf5qHE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "nhBVL41-_Cw"
+        },
+        "snippet": {
+          "publishedAt": "2020-04-03T16:50:03Z",
+          "channelId": "UCsBjURrPoezykLs9EqgamOA",
+          "title": "Vue.js Explained in 100 Seconds",
+          "description": "What is Vue.js? Learn the basics of Vue and build your first reactive UI component in just 100 seconds ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/nhBVL41-_Cw/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/nhBVL41-_Cw/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/nhBVL41-_Cw/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Fireship",
+          "liveBroadcastContent": "none",
+          "publishTime": "2020-04-03T16:50:03Z"
+        }
+      },
+      "{etag: \"Ncxgjdi5jSS9PK8_8jT74-yHsH8\", id: {…}, kind…}",
+      "{etag: \"FN8aHR_nqWuES1lpMH-NfQhptqQ\", id: {…}, kind…}",
+      "{etag: \"eyuDSZOMOVp2SXcXPc8zbULQ4kE\", id: {…}, kind…}",
+      "{etag: \"EC81bDTdbDXY--uGGjbFRobOMjk\", id: {…}, kind…}",
+      "{etag: \"yV-ENHyqBmi08NV4Bssk0-aQnGE\", id: {…}, kind…}",
+      "{etag: \"zAIWd24NEXs3mysmMbYnoF0GGAc\", id: {…}, kind…}",
+      "{etag: \"FKY1kk3BgMo6n9e6BIXzPm6hZ0Y\", id: {…}, kind…}",
+      "{etag: \"ogST2XwEq_k-DA_9-C0X-PdZgIY\", id: {…}, kind…}",
+      "{etag: \"mt5IAki6x_Np7_HqOx1ToF8kNeE\", id: {…}, kind…}",
+      "{etag: \"5antzt0H2r5Cl5YgEt9hK5S7WNM\", id: {…}, kind…}",
+      "{etag: \"X96jx9E02Gkd2i7CiiBXuj2rMRU\", id: {…}, kind…}"
+    ],
+    "subHooks": [],
+    "debugInfo": null,
+    "hookSource": {
+      "lineNumber": 8,
+      "functionName": "App",
+      "fileName": "http://localhost:5173/src/App.jsx?t=1758787073323",
+      "columnNumber": 31
+    }
+  },
+  {
+    "name": "State",
+    "value": {
+      "kind": "youtube#searchResult",
+      "etag": "QQihNIU8ZmcbKaOW_DSJ2Gf5qHE",
+      "id": "{kind: \"youtube#video\", videoId: \"nhBVL41-_Cw\"}",
+      "snippet": "{channelId: \"UCsBjURrPoezykLs9EqgamOA\", channelTitl…}"
+    },
+    "subHooks": [],
+    "debugInfo": null,
+    "hookSource": {
+      "lineNumber": 9,
+      "functionName": "App",
+      "fileName": "http://localhost:5173/src/App.jsx?t=1758787073323",
+      "columnNumber": 45
+    }
+  },
+  {
+    "name": "State",
+    "value": "",
+    "subHooks": [],
+    "debugInfo": null,
+    "hookSource": {
+      "lineNumber": 10,
+      "functionName": "App",
+      "fileName": "http://localhost:5173/src/App.jsx?t=1758787073323",
+      "columnNumber": 43
+    }
+  }
+]
